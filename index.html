@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="css/custom-icons.css"/>
     <link rel="stylesheet" type="text/css" href="css/kindle.css"/>
 
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">
+
     <script type="text/javascript">
         var jsonp = function () {
             return {
@@ -189,9 +191,10 @@
             temp.innerHTML = Math.round(data.main.temp);
             city.innerHTML = data.name;
             description.innerHTML = data.weather[0].description;
-            lastUpdate.innerHTML = momentWithCorrectUtcOffset(new Date()).format(timeFormat) + "/" + momentWithCorrectUtcOffset(new Date(data.dt * 1000)).format(timeFormat);
+            lastUpdate.innerHTML = momentWithCorrectUtcOffset(new Date(data.dt * 1000)).format(timeFormat);
 
             date.innerHTML = momentWithCorrectUtcOffset(new Date()).format("dd, ll");
+            time.innerHTML = momentWithCorrectUtcOffset(new Date()).format(timeFormat);
             
             var sunrise = momentWithCorrectUtcOffset(new Date(data.sys.sunrise * 1000));
             var sunset = momentWithCorrectUtcOffset(new Date(data.sys.sunset * 1000));
@@ -292,7 +295,7 @@
             "wi-moon-alt-waning-crescent-6",
         ];
 
-        var timeFormat = "HH:mm";
+        var timeFormat = "h:mm a";
 
         // Config parameters.
         var api_params, api_appId, api_lang, api_units, api_locParams, rotation, night_mode, refreshTime, utcOffset;
@@ -398,6 +401,7 @@
             description = document.getElementById("description");
             lastUpdate = document.getElementById("lastUpdate");
             date = document.getElementById("date");
+            time = document.getElementById("time");
             sun = document.getElementById("sun");
 
             forecastsCells = [];
@@ -527,13 +531,18 @@
 <body>
 <div id="page">
     <a id="city" href="./config.html"></a>
-    <div id="iconWrapper"><i id="icon"></i></div>
-    <div class="tempWrapper">
+
+    <div id="containerMain">
+        <div id="description"></div>
+        <i id="icon"></i>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div id="temp"></div>
-        <!--<i class="celsius wi wi-celsius"></i>-->
+        <div id="time"></div>
     </div>
-    <div id="description"></div>
-    <div id="lastUpdate"></div>
+
+    <div id="containerLastUpdate">
+        Last updated at <span id="lastUpdate"></span>
+    </div>
     <div class="forecast">
         <div class="col col1">
             <div id="time1" class="colTime"></div>

@@ -1,24 +1,21 @@
+html {
+    color: #000;
+    background: #fff;
+}
+
 html, body {
+    width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0;
+    font-family: "Hind Siliguri", Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
-a {
-    color: #000000;
-    background: #ffffff;
-}
-
-.night a {
-    color: #ffffff;
-    background: #000000;
-}
-
-html.night {
-    color: #ffffff;
-    background: #000000;
+#page {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
 }
 
 #cleaner {
@@ -30,13 +27,37 @@ html.night {
     display: none;
 }
 
-#page {
-    position: relative;
-    height: 100%;
-    overflow: hidden;
+/* ========================================================================= */
+
+#containerMain {
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    text-align: center;
 }
 
+#icon, #temp {
+    display: inline-block;
+    font-size: 160px;
+    line-height: 155px;
+}
+
+#time {
+    font-size: 64px;
+}
+
+#description {
+    font-size: 48px;
+}
+
+/* ========================================================================= */
+
 #city {
+    display: none;
+}
+
+/* #city {
     font-size: 50px;
     font-size: 7rem;
     position: absolute;
@@ -44,54 +65,41 @@ html.night {
     right: 3.3%;
     display: block;
     text-decoration: none;
-}
+} */
 
-#temp {
-    font-size: 200px;
-    font-size: 28rem;
-    display: inline-block;
+#date {
+    display: none;
 }
-
-.tempWrapper {
+/* #date {
     position: absolute;
-    right: 3.3%;
-    top: 10%;
-}
-
-#lastUpdate {
-    font-size: 10px;
-    font-size: 1.4rem;
-    position: absolute;
-    bottom: 47%;
+    bottom: 0;
     left: 3.3%;
+    font-size: 30px;
+    font-size: 4.3rem;
+} */
+
+/* ========================================================================= */
+
+#containerLastUpdate {
+    font-size: 10px;
+    position: fixed;
+    bottom: 8px;
+    left: 8px;
 }
 
-#description {
-    position: absolute;
-    right: 3.3%;
-    bottom: 46%;
-    font-size: 50px;
-    font-size: 7rem;
+/* ========================================================================= */
+
+html.night {
+    color: #ffffff;
+    background: #000000;
 }
 
-#icon {
-    font-size: 250px;
-    font-size: 35rem;
-}
-
-#iconWrapper {
-    position: absolute;
-    left: 5%;
-    top: 8.5%;
-}
 
 .forecast {
     position: absolute;
     width: 100%;
     bottom: 6%;
     left: 0;
-    border-top: 5px solid black;
-    border-bottom: 1px solid black;
     height: 39%;
 }
 
@@ -101,7 +109,6 @@ html.night {
 
 .col {
     width: 24.5%;
-    border-right: 1px solid black;
     float: left;
     text-align: center;
     height: 100%;
@@ -115,41 +122,34 @@ html.night {
     border-right: none;
 }
 
-#date {
-    position: absolute;
-    bottom: 0;
-    left: 3.3%;
-    font-size: 30px;
-    font-size: 4.3rem;
-}
+
 
 #sun {
     position: absolute;
-    bottom: 0;
-    right: 3.3%;
-    font-size: 30px;
-    font-size: 4.3rem;
+    bottom: 4px;
+    right: 4px;
+    font-size: 20px;
 }
 
 .forecastIconWrapper {
-    font-size: 100px;
-    font-size: 14.2rem;
+    font-size: 86px;
+    height: 136px;
+    line-height: 160px;
 }
 
 .colTemp {
-    font-size: 50px;
-    font-size: 7.1rem;
+    font-size: 48px;
+    margin-bottom: 8px;
+    line-height: 46px;
 }
 
 .colTime {
-    font-size: 35px;
-    font-size: 5rem;
-    margin-top: 5%;
+    font-size: 24px;
+    margin-top: 16px;
 }
 
 .colDesc {
-    font-size: 20px;
-    font-size: 2.8rem;
+    font-size: 15px;
 }
 
 .portrait .col:nth-last-child(2) {

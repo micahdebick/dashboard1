@@ -27,7 +27,7 @@
 </head>
 <body>
 <h1>Kindle Weather Dashboard<br/>Config Page</h1>
-<form action="index.html">
+<form action="index.html" method="GET">
     <div>
         <label>City: <br/><input type="text" name="city" id="city" /></label>
     </div>
@@ -70,8 +70,8 @@
     <div>
         <label>Language: <br/>
             <select name="lang" id="lang">
-                <option value="sk">Slovensky</option>
                 <option value="en">English</option>
+                <option value="sk">Slovensky</option>
                 <option value="cs">Česky</option>
                 <option value="de">Deutsch</option>
             </select>
@@ -91,19 +91,19 @@
     <div>
         <label>Units: <br/>
             <select name="units" id="units">
-                <option value="metric">Metric - °C</option>
-                <option value="imperial">Imperial - Fahrenheit</option>
                 <option value="">default</option>
+                <option value="imperial">Imperial - Fahrenheit</option>
+                <option value="metric">Metric - °C</option>
             </select>
         </label>
     </div>
     <div>
         <label>Night Mode: <br/>
             <select name="night" id="night">
+                <option value="">default</option>
                 <option value="off">off</option>
                 <option value="auto">sunset - sunrise</option>
                 <option value="on">always</option>
-                <option value="">default</option>
             </select>
         </label>
     </div>
@@ -116,39 +116,30 @@
 </form>
 <div>Source ane more info: <a href="https://github.com/matopeto/kindle-weather-dashboard">https://github.com/matopeto/kindle-weather-dashboard</a></div>
 <script type="application/javascript">
-    var params={};
-    window.location.search
-        .replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str,key,value) {
-                params[key] = decodeURIComponent(value);
-            }
-        );
+    var params = {};
+    window.location.search.replace(
+        /[?&]+([^=&]+)=([^&]*)/gi,
+        function(str, key, value) {
+            params[key] = decodeURIComponent(value);
+        }
+    );
 
-    if (params["city"]) {
-        document.getElementById("city").value = params["city"];
-    }
-    if (params["lat"]) {
-        document.getElementById("lat").value = params["lat"];
-    }
-    if (params["lon"]) {
-        document.getElementById("lon").value = params["lon"];
-    }
-    if (params["lang"]) {
-        document.getElementById("lang").value = params["lang"];
-    }
-    if (params["rotation"]) {
-        document.getElementById("rotation").value = params["rotation"];
-    }
-    if (params["units"]) {
-        document.getElementById("units").value = params["units"];
-    }
-    if (params["night"]) {
-        document.getElementById("night").value = params["night"];
-    }
-    if (params["appId"]) {
-        document.getElementById("appId").value = params["appId"];
-    }
-    if (params["utcOffset"]) {
-        document.getElementById("utcOffset").value = params["utcOffset"];
+    var paramKeys = [
+        "city",
+        "lat",
+        "lon",
+        "lang",
+        "rotation",
+        "units",
+        "night",
+        "appId",
+        "utcOffset",
+    ];
+
+    for (var i = 0; i < paramKeys.length; i++) {
+        var key = paramKeys[i];
+        if (params[key])
+            document.getElementById(key).value = params[key];
     }
 </script>
 </body>
