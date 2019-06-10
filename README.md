@@ -23,8 +23,6 @@ Weather and forecast source: https://openweathermap.org/
 
 Icons source: https://github.com/erikflowers/weather-icons
 
-<img src="real_devices.jpg" width="300" alt="Dashboard on real devices" />
-
 # How to install
 1. clone or download repository
 2. set your location and others in `config.js`
