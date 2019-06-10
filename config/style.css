@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+}
+body {
+    margin: 10px;
+}
+
+form div {
+    margin: 10px 0;
+}
+
+input[name=city] {
+    width: 90%;
+    padding: 10px;
+}
+
+input[name=lat], input[name=lon] {
+    width: 100px;
+}

@@ -1,0 +1,19 @@
+{
+    "api": {
+        "appId": "YOUR_APP_ID",
+        "locParams": "",
+        "lang": "en",
+        "units": "imperial",
+        "params": ""
+    },
+    "pollTime": {
+        "currentWeather": 900000,
+        "forecastWeather": 900000,
+        "dateTime": 60000,
+        "version": 10000,
+        "config": 10000
+    },
+    "nightMode": false,
+    "utcOffset": "",
+    "timeFormat": "h:mm a"
+}

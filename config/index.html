@@ -3,31 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Kindle Weather Dashboard Config</title>
-    <style>
-        h1 {
-            text-align: center;
-        }
-        body {
-            margin: 10px;
-        }
-
-        form div {
-            margin: 10px 0;
-        }
-
-        input[name=city] {
-            width: 90%;
-            padding: 10px;
-        }
-
-        input[name=lat], input[name=lon] {
-            width: 100px;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js"></script>
 </head>
 <body>
 <h1>Kindle Weather Dashboard<br/>Config Page</h1>
-<form action="index.html" method="GET">
+<form action="../" method="GET">
     <div>
         <label>City: <br/><input type="text" name="city" id="city" /></label>
     </div>
@@ -69,7 +50,7 @@
     </div>
     <div>
         <label>Language: <br/>
-            <select name="lang" id="lang">
+            <select name="api[lang]" id="lang">
                 <option value="en">English</option>
                 <option value="sk">Slovensky</option>
                 <option value="cs">Česky</option>
@@ -90,16 +71,16 @@
     </div>
     <div>
         <label>Units: <br/>
-            <select name="units" id="units">
-                <option value="">default</option>
+            <select name="api[units]" id="units">
                 <option value="imperial">Imperial - Fahrenheit</option>
                 <option value="metric">Metric - °C</option>
+                <option value="">default (kelvin)</option>
             </select>
         </label>
     </div>
     <div>
         <label>Night Mode: <br/>
-            <select name="night" id="night">
+            <select name="nightMode" id="night">
                 <option value="">default</option>
                 <option value="off">off</option>
                 <option value="auto">sunset - sunrise</option>
@@ -108,39 +89,15 @@
         </label>
     </div>
     <div>
-        <label>OWM appid (leave it blank for default): <br/><input type="text" name="appId" id="appId"/></label>
+        <label>OWM appid (leave it blank for default): <br/><input type="text" name="api[appId]" id="appId"/></label>
     </div>
     <div>
         <input type="submit" value="Show Dashboard"/>
     </div>
 </form>
-<div>Source ane more info: <a href="https://github.com/matopeto/kindle-weather-dashboard">https://github.com/matopeto/kindle-weather-dashboard</a></div>
+<div>Source ane more info: <a href="https://github.com/Joseph14078/kindle-weather-dashboard">https://github.com/Joseph14078/kindle-weather-dashboard</a></div>
 <script type="application/javascript">
-    var params = {};
-    window.location.search.replace(
-        /[?&]+([^=&]+)=([^&]*)/gi,
-        function(str, key, value) {
-            params[key] = decodeURIComponent(value);
-        }
-    );
 
-    var paramKeys = [
-        "city",
-        "lat",
-        "lon",
-        "lang",
-        "rotation",
-        "units",
-        "night",
-        "appId",
-        "utcOffset",
-    ];
-
-    for (var i = 0; i < paramKeys.length; i++) {
-        var key = paramKeys[i];
-        if (params[key])
-            document.getElementById(key).value = params[key];
-    }
 </script>
 </body>
 </html>

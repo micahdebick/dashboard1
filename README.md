@@ -2,11 +2,7 @@
 
 Simple webpage with weahter informations.
 
-# Try it!
-
-Go to: http://kindle.hrincar.eu/weather/ and that's it!
-
-or you can install it at own server and customize.
+Based on https://github.com/matopeto/kindle-weather-dashboard.
 
 ## Features
 
@@ -37,7 +33,8 @@ Icons source: https://github.com/erikflowers/weather-icons
   * press search button (or keyboard button on Kindle 4) on homescreen and type: `;debugOn` and press enter on keyboard
   * press search button (or keyboard button on Kindle 4) again and type: `~disableScreensaver` and press enter on keyboard. (On kindle Paperwhite type: `~ds`
 5. launch your browser and go to url of your server
-6. Dashboard don't need connection to your server (you can shutdown local server now) Dashboard calls api directly.
+
+Changes to your server-side configuration will be reloaded automatically according to the polling period specified in `config.json`.
 
 ## Configuration
 ### with config.js
@@ -69,12 +66,7 @@ Examples:
 
 ## Screenshots
 
-### Kindle 4
-<img src="screenshot_kindle4.gif" width="300" alt="Kindle 4 screenshot" />
+### Kindle Keyboard 3 (Simulated)
+<img src="screenshot_kindle3.png" width="300" alt="Kindle 3 screenshot" />
 
-### Kindle Paperwhite 3
-<img src="screenshot_paperwhite3.png" width="300" alt="Kindle Paperwhite 3 screenshot" />
-
-### Real devices
-<img src="real_devices.jpg" width="300" alt="Dashboard on real devices" />
 

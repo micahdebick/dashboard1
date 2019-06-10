@@ -8,7 +8,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: "Hind Siliguri", Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
 }
 
@@ -30,21 +30,28 @@ html, body {
 /* ========================================================================= */
 
 #containerMain {
-    margin-top: 32px;
+    margin-top: 42px;
     margin-left: auto;
     margin-right: auto;
     display: table;
     text-align: center;
 }
 
+#icon {
+    font-size: 105px;
+}
+
+#temp {
+    font-size: 116px;
+}
+
 #icon, #temp {
     display: inline-block;
-    font-size: 160px;
     line-height: 155px;
 }
 
 #time {
-    font-size: 64px;
+    font-size: 86px;
 }
 
 #description {
@@ -126,15 +133,15 @@ html.night {
 
 #sun {
     position: absolute;
-    bottom: 4px;
-    right: 4px;
-    font-size: 20px;
+    bottom: 8px;
+    right: 8px;
+    font-size: 22px;
 }
 
 .forecastIconWrapper {
     font-size: 86px;
     height: 136px;
-    line-height: 160px;
+    line-height: 150px;
 }
 
 .colTemp {
@@ -144,12 +151,12 @@ html.night {
 }
 
 .colTime {
-    font-size: 24px;
+    font-size: 28px;
     margin-top: 16px;
 }
 
 .colDesc {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .portrait .col:nth-last-child(2) {
