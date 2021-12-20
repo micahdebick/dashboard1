@@ -1,10 +1,10 @@
 {
     "api": {
         "appId": "6f1c182d1ebe3006634895f631a6f25e",
-        "locParams": "",
+        "locParams": "lat=36&lon=-86",
         "lang": "en",
         "units": "imperial",
-        "params": ""
+        "params": "city=Nashville&lat=36&lon=68&utcOffset=&lang=en&rotation=ll&units=imperial&night=auto&appId=6f1c182d1ebe3006634895f631a6f25e"
     },
     "pollTime": {
         "currentWeather": 900000,
