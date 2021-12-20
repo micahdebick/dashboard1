@@ -14,6 +14,6 @@
         "config": 10000
     },
     "nightMode": auto,
-    "utcOffset": "-4",
+    "utcOffset": "-6",
     "timeFormat": "h:mm a"
 }
